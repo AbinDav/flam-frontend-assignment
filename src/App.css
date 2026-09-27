@@ -3,12 +3,22 @@
 body{
   margin:0px;
   font-family: "Roboto", sans-serif;
-min-height:120vh;
+  
+
 }
-.container{
-  margin:0px;
-  padding-bottom:25px;
-  padding-top:70px;
+.container {
+  margin: 0px;
+  padding-top: 70px;
+  padding-bottom: 25px;
+  min-height: 90vh;
+
+  background-image: url("https://github.com/AbinDav/img/blob/main/light-bg-5.png?raw=true");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.dark-container{
+  background-image: url("https://github.com/AbinDav/img/blob/main/dark-bg-5.png?raw=true");
 }
 .navbar{
   position: fixed;
@@ -39,6 +49,14 @@ min-height:120vh;
   font-size:40px;
   margin-top:35px;
   margin-left:50px;
+}
+.theme_button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right:50px;
 }
 .generate_button {
   padding: 13px 28px;
@@ -102,6 +120,8 @@ min-height:120vh;
   flex-direction:row;
   justify-content:center;
   gap:70px;
+  margin-top:105px;
+  
 }
 .but_flx{
   display:flex;
@@ -142,6 +162,14 @@ min-height:120vh;
   display:flex;
   flex-direction:row;
 }
+.quiz_flx_center{
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  margin-top:50px;
+}
 
 @media (max-width: 1000px) {
 
@@ -149,6 +177,7 @@ min-height:120vh;
     flex-direction: column;
     align-items: center;
     gap: 35px;
+    margin-top:45px;
   }
 
   .topic_input {
