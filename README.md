@@ -2,6 +2,8 @@
 
 # AI Study Guide
 
+DEMO VIDEO : https://youtu.be/Xj9FbAl1v4o
+
 An interactive AI-powered study assistant built with React, Node.js, Express, and Google Gemini.
 
 The application allows users to enter a study topic or study material and generate either:
