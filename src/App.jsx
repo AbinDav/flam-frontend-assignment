@@ -6,8 +6,12 @@ import FlashCard from "./components/flashcards";
 import Error from "./components/ErrorContainer"
 import Quiz from "./components/quiz";
 
+
+
 function App() {
 
+  const local_api_url =  "http://localhost:5000/api/generate";
+  const API_URL = "/api/generate";
   const [error, setError] = useState(false)
   const [cards, setCards] = useState([])
   const [questions, setQuestions] = useState([])
@@ -25,7 +29,7 @@ function App() {
     setQuestions([])
 
     try {
-      const response = await fetch("http://localhost:5000/api/generate", {
+      const response = await fetch(API_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
