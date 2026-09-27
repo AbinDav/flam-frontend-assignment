@@ -76,3 +76,5 @@ flam-frontend-assignment/
 ├── .gitignore
 ├── package.json
 └── README.md
+```
+I added api folder containg generate.js file for vercel for locally running server folder is needed.
