@@ -91,3 +91,8 @@
 .but_arrow{
     all:unset;
 }
+@media (max-width:1000px){
+  .mobile_flashCard_ans{
+    font-size:13px !important;
+  }
+}

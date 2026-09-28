@@ -38,8 +38,8 @@ function FlashCard({
             <h2>{cards[currentIndex].question}</h2>
           </div>
 
-          <div className="flashcard_back">
-            <p>{cards[currentIndex].answer}</p>
+          <div className="flashcard_back ">
+            <p className="mobile_flashCard_ans">{cards[currentIndex].answer}</p>
           </div>
 
         </div>
