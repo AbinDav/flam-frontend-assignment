@@ -116,7 +116,7 @@ app.post("/api/generate", async (req, res) => {
     }
 
     const response = await ai.models.generateContent({
-      model: "gemini-3.5-flash-lite",
+      model: "gemini-3.5-flash",
       contents: `${prompt}\n${input}`,
     });
     const result = JSON.parse(response.text)
@@ -140,7 +140,7 @@ app.post("/api/generate", async (req, res) => {
     console.error("Gemini error:", error);
 
     res.status(500).json({
-      error: "Failed to generate response",
+      error: error.message,
     });
   }
 });

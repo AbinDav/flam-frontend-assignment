@@ -11,7 +11,7 @@ import Quiz from "./components/quiz";
 function App() {
 
   const local_api_url =  "http://localhost:5000/api/generate";
-  const API_URL = "/api/generate";
+  const api_url = "/api/generate";
   const [error, setError] = useState(false)
   const [cards, setCards] = useState([])
   const [questions, setQuestions] = useState([])
@@ -21,15 +21,17 @@ function App() {
   const [type, setType] = useState("flashcards")
   const [load, setLoad] = useState(false)
   const [dark, setDark] = useState(true)
+  const [errorMessage, setErrorMessage] = useState("");
 
   async function testBackend() {
     setLoad(true);
     setError(false);
     setCards([])
     setQuestions([])
+     setErrorMessage("");
 
     try {
-      const response = await fetch(API_URL, {
+      const response = await fetch(api_url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -43,6 +45,7 @@ function App() {
       const data = await response.json();
 
       if (!response.ok) {
+         setErrorMessage(data.error);
         setError(true);
         return;
       }
@@ -57,6 +60,7 @@ function App() {
       setFlipped(false);
 
     } catch (error) {
+      setErrorMessage(error.message)
       console.error(error);
       setError(true);
     } finally {
@@ -117,7 +121,7 @@ function App() {
           </div>
         </div>
         {
-          error && <Error />
+          error && <Error errorMessage={errorMessage}/>
         }
         {!error && !load && type === "flashcards" && <FlashCard
           cards={cards}
